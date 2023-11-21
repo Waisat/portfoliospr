@@ -1,0 +1,57 @@
+<html>
+	
+	
+	<body>
+		
+		<h2>Ajouter un utilisateur</h2>
+		    <form th:action="@{/utilisateur/ajoutUtilisateur}" th:object="${nouveauUtilisateur}" method="post">
+
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" th:field="*{nom}"  required/>
+		<span style="color: red;" th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"></span>
+        <br/>
+
+        <label for="prenom">Prenom:</label>
+        <input type="text" id="prenom"  th:field="*{prenom}" required/>
+		<span style="color: red;" th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}"></span>
+        <br/>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email"  th:field="*{email}" required/>
+		<span style="color: red;" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        <br/>
+        
+        <label for="motDePasse">Mot de passe:</label>
+        <input type="password" id="motDePasse"  th:field="*{motDePasse}"  required/>
+
+        <br/>
+        
+        <label for="cpassword">Confirmation du mot de passe:</label>
+        <input type="password" id="motDePasse"   required/>
+
+        <br/>
+        
+        <label for="dateNaissance">Date de naissance:</label>
+        <input type="text" id="dateNaissance"  th:field="*{dateNaissance}"  required/>
+
+        <br/>
+        
+        <label for="photo">Photo:</label>
+        <input type="text" id="photo"  th:field="*{photo}"  required/>
+
+        <br/>
+		<label for="role">Role:</label>
+        <input type="text" id="role"  th:field="*{role.intitule}"  required/>
+
+        <br/>
+        <button type="submit">Ajouter</button>
+
+    </form>
+
+    <br/>
+
+    <a th:href="@{/utilisateur/listeUtilisateur}">Retour à la liste des utilisateurs</a>
+
+	</body>
+</html>
+	
